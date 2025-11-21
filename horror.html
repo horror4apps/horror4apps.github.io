@@ -330,4 +330,127 @@
         </div>
         
         <div class="section">
-            <h2>Nouveautés 202
+            <h2>Nouveautés 2024</h2>
+            <p>Cette édition spéciale Halloween inclut de nouveaux personnages terrifiants :</p>
+            <div class="characters-grid">
+                <div class="character-card">
+                    <div class="character-emoji">🤡</div>
+                    <h3>Pennywise</h3>
+                </div>
+                <div class="character-card">
+                    <div class="character-emoji">👻</div>
+                    <h3>Annabelle</h3>
+                </div>
+                <div class="character-card">
+                    <div class="character-emoji">🎭</div>
+                    <h3>Jason Voorhees</h3>
+                </div>
+                <div class="character-card">
+                    <div class="character-emoji">🧸</div>
+                    <h3>Huggy Wuggy</h3>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Fonctionnalités Principales</h2>
+            <div class="features-list">
+                <div class="feature-item">
+                    <span class="feature-emoji">💀</span>
+                    <div>Effets sonores démoniaques et voix terrifiantes</div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-emoji">😈</span>
+                    <div>Conversations avec Granny, Chucky Doll et Slendrina</div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-emoji">🎃</span>
+                    <div>Simulateur de chat et appels vidéo avec vampires et goules</div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-emoji">👻</span>
+                    <div>Appels entrants de Sonic.exe, Piggy Escape et Freddy</div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-emoji">🤡</span>
+                    <div>Simulateur d'identifiant d'appel terrifiant</div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-emoji">😱</span>
+                    <div>Conversations avec la Nonne, le Joker et Satan 666</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cta-section">
+            <h2>Prêt à relever le défi ?</h2>
+            <p>Aimez-vous les histoires creepypasta ? Voulez-vous jouer à cache-cache avec l'horreur ?</p>
+            <p>Alors essayez ce jeu 3AM ! N'hésitez plus !</p>
+            
+            <!-- Bouton Google Play Store -->
+            <div class="download-buttons">
+                <a href="#" class="play-store-btn">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Télécharger sur Google Play">
+                </a>
+            </div>
+            
+            <p>Enregistrez vos réactions et partagez-les sur les réseaux sociaux !</p>
+        </div>
+        
+        <div class="section">
+            <h2>Prochainement</h2>
+            <p>Nous ajouterons bientôt de nouveaux fantômes :</p>
+            <ul>
+                <li>Michael Myers</li>
+                <li>Ayuwoki</li>
+                <li>Alexandra Mind Mess</li>
+                <li>Et d'autres créatures hantées</li>
+            </ul>
+        </div>
+        
+        <div class="disclaimer">
+            <h3>AVIS IMPORTANT</h3>
+            <p>Ce jeu d'horreur est conçu uniquement à des fins de divertissement. Les résultats ne doivent pas être pris au sérieux. Toutes les images sont inspirées des œuvres de Trevor Henderson.</p>
+        </div>
+        
+        <footer>
+            <p>Momo Horror Game Challenge &copy; 2024 - L'application de blague d'horreur ultime pour Halloween</p>
+        </footer>
+    </div>
+
+    <script>
+        // Script pour charger une image de Momo si disponible
+        document.addEventListener('DOMContentLoaded', function() {
+            const momoImages = [
+                'https://i.imgur.com/6Q0y8X2.png',
+                'https://i.imgur.com/ABC123.jpg', // Remplacez par une vraie URL
+                'https://example.com/momo-image.jpg' // Remplacez par une vraie URL
+            ];
+            
+            const momoContainer = document.querySelector('.momo-image');
+            let currentIndex = 0;
+            
+            function tryLoadImage() {
+                if (currentIndex >= momoImages.length) return;
+                
+                const img = new Image();
+                img.onload = function() {
+                    momoContainer.innerHTML = '';
+                    momoContainer.appendChild(img);
+                    img.style.width = '100%';
+                    img.style.height = '100%';
+                    img.style.borderRadius = '50%';
+                    img.style.objectFit = 'cover';
+                };
+                img.onerror = function() {
+                    currentIndex++;
+                    tryLoadImage();
+                };
+                img.src = momoImages[currentIndex];
+            }
+            
+            tryLoadImage();
+        });
+    </script>
+</body>
+</html>
