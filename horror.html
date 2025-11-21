@@ -3,8 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Momo Horror Game Challenge - L'Ultime Expérience d'Horreur</title>
+    <title>Momo Horror Game - L'Ultime Expérience d'Horreur</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        :root {
+            --primary: #8b0000;
+            --secondary: #1a1a2e;
+            --accent: #ff4500;
+            --text: #f0f0f0;
+            --card-bg: rgba(40, 40, 60, 0.9);
+        }
+        
         * {
             margin: 0;
             padding: 0;
@@ -13,10 +22,11 @@
         }
         
         body {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-            color: #f0f0f0;
+            background: linear-gradient(135deg, var(--secondary) 0%, #16213e 50%, #0f3460 100%);
+            color: var(--text);
             line-height: 1.6;
             overflow-x: hidden;
+            min-height: 100vh;
         }
         
         .container {
@@ -45,6 +55,24 @@
             height: 5px;
             background: linear-gradient(90deg, #ff0000, #8b0000, #ff0000);
             z-index: 1;
+        }
+        
+        .momo-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--primary);
+            box-shadow: 0 0 25px rgba(255, 0, 0, 0.7);
+            margin: 20px auto;
+            display: block;
+            animation: pulse 3s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 25px rgba(255, 0, 0, 0.7); }
+            50% { box-shadow: 0 0 40px rgba(255, 0, 0, 0.9); }
+            100% { box-shadow: 0 0 25px rgba(255, 0, 0, 0.7); }
         }
         
         h1 {
@@ -82,6 +110,12 @@
             margin: 25px 0;
             box-shadow: 0 5px 15px rgba(139, 0, 0, 0.5);
             border-left: 5px solid #ff0000;
+            animation: shake 0.5s infinite alternate;
+        }
+        
+        @keyframes shake {
+            from { transform: translateX(-5px); }
+            to { transform: translateX(5px); }
         }
         
         .section {
@@ -162,23 +196,31 @@
             margin: 40px 0;
         }
         
-        .cta-button {
+        .download-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .play-store-btn {
             display: inline-block;
-            background: linear-gradient(45deg, #ff8c00, #ff4500);
-            color: white;
-            padding: 15px 40px;
-            font-size: 1.5rem;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 50px;
-            margin: 20px 0;
-            box-shadow: 0 8px 20px rgba(255, 69, 0, 0.5);
+            background: #000;
+            border-radius: 10px;
+            padding: 12px 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
             transition: transform 0.3s, box-shadow 0.3s;
         }
         
-        .cta-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 12px 25px rgba(255, 69, 0, 0.7);
+        .play-store-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+        }
+        
+        .play-store-btn img {
+            height: 60px;
+            width: auto;
         }
         
         .disclaimer {
@@ -208,12 +250,21 @@
                 font-size: 1.1rem;
             }
             
+            .momo-image {
+                width: 150px;
+                height: 150px;
+            }
+            
             .characters-grid {
                 grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
             }
             
             .features-list {
                 grid-template-columns: 1fr;
+            }
+            
+            .play-store-btn img {
+                height: 50px;
             }
         }
     </style>
@@ -223,6 +274,10 @@
         <header>
             <h1>Momo Horror Game Challenge</h1>
             <div class="tagline">L'expérience d'horreur ultime - Appels vidéo effrayants & jumpscares</div>
+            
+            <!-- Image de Momo -->
+            <img src="https://i.imgur.com/6Q0y8X2.png" alt="Momo Horror Character" class="momo-image">
+            
             <div class="halloween-badge">SPECIAL HALLOWEEN 2024 🎃</div>
             <p>Affrontez Momo, Siren Head SCP 6789, Cartoon Cat et maintenant Steve Minecraft horrifique!</p>
         </header>
@@ -320,7 +375,14 @@
             <h2>Prêt à relever le défi ?</h2>
             <p>Aimez-vous les histoires creepypasta ? Voulez-vous jouer à cache-cache avec l'horreur ?</p>
             <p>Alors essayez ce jeu 3AM ! N'hésitez plus !</p>
-            <a href="#" class="cta-button">TÉLÉCHARGER GRATUITEMENT 📱</a>
+            
+            <!-- Bouton Google Play Store -->
+            <div class="download-buttons">
+                <a href="#" class="play-store-btn">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Télécharger sur Google Play">
+                </a>
+            </div>
+            
             <p>Enregistrez vos réactions et partagez-les sur les réseaux sociaux !</p>
         </div>
         
